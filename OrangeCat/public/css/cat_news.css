@@ -1,0 +1,162 @@
+.center_1220{
+  width: 1220px;
+  margin: 20px auto;
+}
+.img_tu{
+  height: 320px;
+  position: relative;
+}
+
+.img_tu>img{
+  position: absolute;
+  top: 0;
+  left: -360px;
+}
+#content .english_name {
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #b9b9b9;
+  margin-bottom: 30px;
+}
+#content .name {
+  display: inline-block;
+  width: 100%;
+  font-size: 24px;
+  height: 50px;
+  text-align: center;
+  margin-top: 30px;
+}
+#content .zixun_content{
+  text-align: center;
+}
+#content .zixun_content .zixun_left{
+display: inline-block;
+vertical-align: top;
+width: 950px;
+margin-right: 20px;
+}
+
+#content .zixun_content .zixun_left>a{
+display: block;
+margin: 0 10px;
+width: 930px;
+text-decoration: none;
+color: #333333;
+border-bottom: 1px solid #eee;
+margin-bottom: 20px;
+position: relative;
+}
+
+#content .zixun_content .zixun_left>a .zixun_img{
+display: inline-block;
+vertical-align: top;
+width: 328px;
+height: 210px;
+margin-bottom: 20px;
+}
+
+#content .zixun_content .zixun_left>a .zixun_img>img{
+width: 328px;
+height: 210px;
+}
+
+#content .zixun_content .zixun_left>a .zixun_content{
+display: inline-block;
+vertical-align: top;
+width: 530px;
+margin-left: 15px;
+}
+
+#content .zixun_content .zixun_left>a .zixun_content .zixun_title{
+width: 530px;
+height: 30px;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+font-size: 18px;
+line-height: 30px;
+}
+
+#content .zixun_content .zixun_left>a:hover .zixun_content .zixun_title{
+color: #ea5413;
+}
+
+#content .zixun_content .zixun_left>a .zixun_content .zixun_time{
+width: 530px;
+font-size: 12px;
+line-height: 30px;
+}
+
+#content .zixun_content .zixun_left>a .zixun_content .zixun_time>span{
+margin-left: 50px;
+}
+#content .zixun_content .zixun_left>a .zixun_content .zixun_text{
+width: 530px;
+font-size: 12px;
+line-height: 20px;
+color: #999;
+overflow: hidden;/*溢出隐藏*/
+white-space: nowrap;/*不允许换行*/
+text-overflow: ellipsis;
+}
+
+#content .zixun_content .zixun_left>a .zixun_content .red_line{
+position: absolute;
+bottom: 0px;
+left: 0px;
+height: 1px;
+width: 0%;
+transition: 1s;
+-moz-transition: 1s; /* Firefox 4 */
+-webkit-transition: 1s; /* Safari 和 Chrome */
+-o-transition: 1s; /* Opera */
+background-color: #ea5413;
+
+}
+
+#content .zixun_content .zixun_left>a:hover .zixun_content .red_line{
+width: 100%;
+}
+
+/* 分页 */
+.maigou_maigou_page{
+  height: 80px;
+  border-radius: 8px;
+  background-color: white;
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+.maigou_maigou_page>a{
+  line-height: 37px;
+  height: 37px;
+  display: inline-block;
+  padding: 0 17px;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  margin: 22px 3px 0;
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+}
+
+.maigou_maigou_page>a:hover{
+  background-color: #ff6542;
+  color: white;
+}
+
+.maigou_maigou_page>a.hover{
+  background-color: #ff6542;
+  color: white;
+}
+
+.maigou_maigou_page>span{
+  line-height: 37px;
+  height: 37px;
+  display: inline-block;
+  margin: 22px 3px 0;
+  padding: 0 17px;
+  font-size: 14px;
+  color: #333;
+}

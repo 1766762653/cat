@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="./css/register.css">
+	<link rel="stylesheet" href="./css/header.css">
+	<link rel="stylesheet" href="./css/footer.css">
+</head>
+<body>
+	<!-- 引入头部 -->
+	<header id="header">
+	</header>
+	<!-- 注册表单框 join_box-->
+	<div id="join_box" style="border: #eee solid 3px;">
+		<div id="Member_join">猫咪会员注册</div>
+		<form id="regForm">
+			<div class="form_box">
+				<span>用户名　：</span>
+				<input tabindex="1" type="text" onblur="cheackname()" name="username" id="username" placeholder="请输入用户名 ，3~12字"
+					autocomplete="off">
+				<err id="nameshowerr"></err>
+			</div>
+			<div class="form_box">
+				<span>密　码　：</span>
+				<input tabindex="2" type="password" onblur="cheackpassword()" name="password" id="password"
+					placeholder="请输入密码，字母开头6~16字" autocomplete='new-password'>
+				<err id="pwdshowerr"></err>
+			</div>
+			<div class="form_box">
+				<span>确认密码：</span>
+				<input tabindex="3" type="password" onblur="checkconfigpassword()" name="confirmpassword" id="confirmpassword"
+					placeholder="请输入确认密码" autocomplete='new-password'>
+				<err id="confirmpassworderr"></err>
+			</div>
+			<div class="form_box">
+				<span>联系电话：</span>
+				<input tabindex="4" type="text" onblur="cheackPhonenumber()" name="Phonenumber" id="Phonenumber"
+					placeholder="请输入联系电话" autocomplete="off">
+				<err id="phoneshowerr"></err>
+			</div>
+			<div class="form_box">
+				<span>电子邮件：</span>
+				<input tabindex="5" type="text" onblur="checkEmail()" name="Email" id="Email" placeholder="请输入邮箱"
+					autocomplete="off">
+				<err id="emashowerr"></err>
+			</div>
+			<!-- submit提交 -->
+			<input type="button" id="submit_form" status="1" value="提交申请">
+		</form>
+	</div>
+	<!-- 条款内容tk_info -->
+	<div id="tk_info" style="z-index: 99;">
+		<div id="tk_centerbox" style=" margin-top: 110px; width: 830px; height: auto; padding-bottom: 20px;">
+			<p class="top_title">条款内容</p>
+			<p class="tk_content" style="text-indent: 0; font-size: 16px; line-height: 30px; height: auto;">
+				当您申请用户时，表示您已经同意遵守本规章。 <br />
+				欢迎您加入本站点参加交流和讨论，本站点为公共论坛，为维护网上公共秩序和社会稳定，请您自觉遵守以下条款：
+				<br />一、不得利用本站危害国家安全、泄露国家秘密，不得侵犯国家社会集体的和公民的合法权益，不得利用本站制作、复制和传播下列信息： <br />
+			</p>
+			<p class="tk_content"
+				style="text-indent: 0; font-size: 16px; line-height: 30px; height: auto; padding-left: 50px;">
+				（一）煽动抗拒、破坏宪法和法律、行政法规实施的；<br />
+				（二）煽动颠覆国家政-权，推-翻社会主义制度的；<br />
+				（三）煽动分-裂国家、破坏国家统一的；<br />
+				（四）煽动民族仇恨、民族歧视，破坏民族团结的；<br />
+				（五）捏造或者歪曲事实，散布谣言，扰乱社会秩序的；<br />
+				（六）宣扬封-建-迷-信、淫-秽、色-情、赌-博、暴-力、凶-杀、恐-怖、教-唆犯-罪的；<br />
+				（七）公然侮辱他人或者捏造事实诽谤他人的，或者进行其他恶意攻击的；<br />
+				（八）损害国家机关信誉的；<br />
+				（九）其他违反宪法和法律行政法规的；<br />
+				（十）进行商业广告行为的。<br />
+			</p>
+			<p class="tk_content" style="text-indent: 0; font-size: 16px; line-height: 30px; height: auto;">
+				二、互相尊重，对自己的言论和行为负责。 <br />三、禁止在申请用户时使用相关本站的词汇，或是带有侮辱、毁谤、造谣类的或是有其含义的各种语言进行注册用户，否则我们会将其删除。
+				<br />四、禁止以任何方式对本站进行各种破坏行为。 <br />五、如果您有违反国家相关法律法规的行为，本站概不负责，您的登录论坛信息均被记录无疑，必要时，我们会向相关的国家管理部门提供此类信息。
+			</p>
+			<div id="agree_tk">阅读并同意</div>
+		</div>
+	</div>
+	<!-- 引入脚部 -->
+	<footer id="footer">
+
+	</footer>
+</body>
+<script src="./js/jquery-3.2.1.js"></script>
+<script src="js/header.js"></script>
+<script src="./js/register.js"></script>
+<script>
+	//抓原素
+	var hiddencontent = document.getElementById("tk_info");
+	// 表单验证
+	// 验证用户名
+	function cheackname() {
+		var cheackusername = new RegExp(/^[^\s'"\.,，。!@#$%*&]+$/);
+		var username = document.getElementById("username").value;
+		if (username.length <= 0) {
+			document.getElementById("nameshowerr").innerHTML = '用户名不能为空';
+			return false;
+		}
+		if (username.length < 3) {
+			document.getElementById("nameshowerr").innerHTML = '用户名长度不足';
+			return false;
+		}
+		if (username.length > 12) {
+			document.getElementById("nameshowerr").innerHTML = '用户名长度超出';
+			return false;
+		}
+		if (cheackusername.test(username)) {
+			document.getElementById("nameshowerr").innerHTML = '';
+			return true;
+		} else {
+			document.getElementById("nameshowerr").innerHTML = '用户名错误';
+			return false;
+		}
+	};
+	// 验证密码
+	function cheackpassword() {
+		var password = document.getElementById("password").value;
+		var cheackpassword = new RegExp(/^[a-zA-Z]\w{5,15}$/);
+		if (password.length <= 0) {
+			document.getElementById("pwdshowerr").innerHTML = '密码不能为空';
+			return false;
+		}
+		if (password.length < 6) {
+			document.getElementById("pwdshowerr").innerHTML = '密码长度不足';
+			return false;
+		}
+		if (password.length > 16) {
+			document.getElementById("pwdshowerr").innerHTML = '密码长度超出';
+			return false;
+		}
+		if (cheackpassword.test(password)) {
+			document.getElementById("pwdshowerr").innerHTML = '';
+			return true;
+		} else {
+			document.getElementById("pwdshowerr").innerHTML = '密码格式不正确';
+			return false;
+		}
+	};
+	// 再次输入验证密码
+	function checkconfigpassword() {
+		var confirmpassword = document.getElementById("confirmpassword").value;
+		var password = document.getElementById("password").value;
+		if (confirmpassword.length == password.length) {
+			document.getElementById("confirmpassworderr").innerHTML = '';
+			return true;
+		} else {
+			document.getElementById("confirmpassworderr").innerHTML = '密码不一致';
+			return false;
+		}
+	}
+	// 验证电话号码
+	function cheackPhonenumber() {
+		var cheackPhonenumber = document.getElementById("Phonenumber").value;
+		var cheack2 = new RegExp(/^((\d{3,4})|\d{3,4}-)?\d{7,8}$/);
+		if (cheack2.test(cheackPhonenumber)) {
+			document.getElementById("phoneshowerr").innerHTML = '';
+			return true;
+		} else {
+			document.getElementById("phoneshowerr").innerHTML = '电话不正确';
+			return false;
+		}
+	};
+	//  验证邮箱
+	function checkEmail() {
+		var Email = document.getElementById("Email").value;
+		var checkEmail = new RegExp(/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/);
+		if (Email.length <= 0) {
+			document.getElementById("emashowerr").innerHTML = '邮箱为空';
+			return false;
+		}
+		if (checkEmail.test(Email)) {
+			document.getElementById("emashowerr").innerHTML = '';
+			return true;
+		} else {
+			document.getElementById("emashowerr").innerHTML = '邮箱不正确';
+			return false;
+		}
+	};
+</script>
+
+</html>

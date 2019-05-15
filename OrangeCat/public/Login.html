@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="./css/login.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 引入头部 -->
+  <header id="header"></header>
+  <!-- 登录框 login_box-->
+  <div id="login_box" style="border: #eee solid 3px;">
+    <div id="Member_login">猫咪会员登录</div>
+    <!-- 表单 -->
+    <div id="regForm">
+      <div class="form_box">
+        <span>用户名：</span>
+        <input type="text" name="username" id="username" onblur="ck_name()" placeholder="请输入用户名" autocomplete="off">
+        <err id="name_err"></err>
+      </div>
+      <div class="form_box">
+        <span>密　码：</span>
+        <input type="password" name="password" id="password" onblur="ck_pwd()" placeholder="请输入密码"
+          autocomplete='new-password'>
+        <err id="pwd_err"></err>
+      </div>
+      <!-- submit提交 -->
+      <div id="submit_form" status="1">登　录</div>
+      <!-- 没有帐号立即注册 -->
+      <div id="No_account">没有猫咪会员帐号？<a href="http://127.0.0.1:3000/register.html">立即注册</a></div>
+    </div>
+  </div>
+
+  <div style="height: 80px;"></div>
+  <!-- 引入底部 -->
+  <footer id="footer"></footer>
+</body>
+<script src="./js/jquery-3.2.1.js"></script>
+<script src="js/header.js"></script>
+<script src="./js/login.js"></script>
+<script>
+  function ck_name() {
+    var u_name = $('#username').val();
+    if (u_name.length <= 0) {
+      $("#name_err").html('用户名为空');
+      return false;
+    } else {
+      $("#name_err").html('');
+      return true;
+    }
+  }
+  function ck_pwd() {
+    var p_pwd = $('#password').val();
+    if (p_pwd.length <= 0) {
+      $("#pwd_err").html('密码为空');
+      return false;
+    } else {
+      $("#pwd_err").html('');
+      return true;
+    }
+  }
+</script>
+</html>

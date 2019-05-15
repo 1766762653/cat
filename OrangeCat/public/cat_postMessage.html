@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/cat_postMessage.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <header id="header"></header>
+  <!-- 禁止重复发布买卖信息ban_repeat -->
+  <div id="ban_repeat">发表帖子注意请不要重复发布买卖信息</div>
+  <!-- 发布信息说明 release_Explain-->
+  <div id="release_Explain">
+    <p>※信息发布小帮手，让更多买家找到您！※</p>
+    <p>①不要重复发布相同信息，使用“顶一下”可将信息排名提前，并且会在首页最新处展示！</p>
+    <p>②标题长度为10~30个汉字。请不要在标题里添加一些特殊粗体符号，违者禁言三天！</p>
+    <p>③若有多种猫咪出售，请按不同猫咪品种分别发布，这样会让买家在搜索信息的时候更容易查到您的信息！</p>
+    <p>④详细介绍要多写些内容，如猫咪是否做过疫苗和驱虫、猫咪父母的介绍、售后服务等等，这些都是买家十分关注的！</p>
+  </div>
+  <!-- 发帖表单release_info -->
+  <div id="release_info">
+    <form action="" method="post" enctype="multipart/form-data" id="regForm">
+      <!-- 帖子标题 post_title-->
+      <div id="post_title">
+        <div class="left">帖子标题：</div>
+        <input type="text" name="post_title" id="cheacklen" onblur="cheacktitle()" placeholder="请输入帖子标题">
+        <span id="showerr">标题长度为30字以内</span>
+      </div>
+      <div id="other_info">
+        <div id="postdesc">
+          帖子描述 :
+          <input type="text" name="post_desc" id="cheadesc" onblur="cheackdesc()" placeholder="必填输入帖子相关描述100字以内">
+        </div>
+        <div class="Unified_style">
+          <div class="left_box">
+            猫咪品种 :
+            <select name="cat_Varieties" class="select_style">
+              <option value="">请选择</option>
+              <option value="37">布偶猫</option>
+              <option value="38">加菲猫</option>
+              <option value="39">金渐层</option>
+              <option value="40">英短蓝猫</option>
+              <option value="41">英短蓝白</option>
+              <option value="42">英国短毛猫</option>
+              <option value="43">美国短毛猫</option>
+              <option value="44">苏格兰折耳猫</option>
+              <option value="45">银渐层</option>
+              <option value="46">异国短毛猫</option>
+              <option value="47">孟买猫</option>
+              <option value="48">暹罗猫</option>
+              <option value="49">孟加拉豹猫</option>
+              <option value="50">缅因猫</option>
+              <option value="51">金吉拉猫</option>
+              <option value="52">无毛猫</option>
+              <option value="53">高地折耳猫</option>
+              <option value="54">曼基康矮脚猫</option>
+              <option value="55">波斯猫</option>
+              <option value="56">橘猫</option>
+              <option value="57">阿比西尼亚猫</option>
+              <option value="58">德文卷毛猫</option>
+            </select>
+          </div>
+          <div class="right_box">
+            联系人 　:
+            <input type="text" name="cat_Contacts" id="Contacts" onblur="cheackContacts()" class="text_style"
+              placeholder="10个字符以内">
+          </div>
+        </div>
+        <div class="Unified_style">
+          <div class="left_box">
+            猫咪性别 :
+            <select name="cat_sex" class="select_style">
+              <option value="">请选择</option>
+              <option value="1">公猫</option>
+              <option value="2">母猫</option>
+              <option value="0">公母猫都有</option>
+            </select>
+          </div>
+          <div class="right_box">
+            所在地区 :
+            <select name="cat_region_Province" style="width: 131px;" class="text_style">
+              <option value="-1">请选择</option>
+              <option value="75">安徽</option>
+              <option value="76">澳门</option>
+              <option value="77">北京</option>
+              <option value="78">重庆</option>
+              <option value="79">福建</option>
+              <option value="80">广东</option>
+              <option value="81">广西</option>
+              <option value="82">贵州</option>
+              <option value="83">甘肃</option>
+              <option value="84">湖北</option>
+              <option value="85">河南</option>
+              <option value="86">河北</option>
+              <option value="87">黑龙江</option>
+              <option value="88">湖南</option>
+              <option value="89">海南</option>
+              <option value="90">江苏</option>
+              <option value="91">江西</option>
+              <option value="92">吉林</option>
+              <option value="93">辽宁</option>
+              <option value="94">内蒙古</option>
+              <option value="95">宁夏</option>
+              <option value="96">青海</option>
+              <option value="97">上海</option>
+              <option value="98">山东</option>
+              <option value="99">四川</option>
+              <option value="100">陕西</option>
+              <option value="101">山西</option>
+              <option value="102">天津</option>
+              <option value="103">台湾</option>
+              <option value="104">西藏</option>
+              <option value="105">新疆</option>
+              <option value="106">香港</option>
+              <option value="107">云南</option>
+              <option value="108">浙江</option>
+            </select>
+            <!-- <select name="cat_region_city" style="width: 131px;margin-left: 27px;" class="text_style">
+              <option value="0">请选择</option>
+            </select> -->
+          </div>
+        </div>
+        <div class="Unified_style">
+          <div class="left_box">
+            猫咪年龄 :
+            <select name="cat_age" class="select_style">
+              <option value="">请选择</option>
+              <option value="1">一个月</option>
+              <option value="2">两个月</option>
+              <option value="3">三个月</option>
+              <option value="4">四个月</option>
+              <option value="5">五个月</option>
+              <option value="6">六个月</option>
+              <option value="7">七个月</option>
+              <option value="8">八个月</option>
+              <option value="9">九个月</option>
+              <option value="10">十个月</option>
+              <option value="11">十一个月</option>
+              <option value="12">一年多</option>
+              <option value="24">两年多</option>
+              <option value="36">三年多</option>
+            </select>
+          </div>
+          <div class="right_box">
+            联系电话 :
+            <input type="text" name="cat_Contact_number" value="" onblur="cheackphone()" id="phonenum"
+              class="text_style">
+          </div>
+        </div>
+        <div class="Unified_style">
+          <div class="left_box">
+            疫苗情况 :
+            <select name="cat_vaccine" class="select_style">
+              <option value="">请选择</option>
+              <option value="3">3针疫苗</option>
+              <option value="2">2针疫苗</option>
+              <option value="1">1针疫苗</option>
+              <option value="0">未打疫苗</option>
+            </select>
+          </div>
+          <div class="right_box">
+            联系 QQ :
+            <input type="text" name="cat_Contact_QQ" value="" onblur="cheackQQ()" id="Contact_QQ" class="text_style">
+          </div>
+        </div>
+        <div class="Unified_style">
+          <div class="left_box">
+            驱虫情况 :
+            <select name="cat_Insect" class="select_style">
+              <option value="">请选择</option>
+              <option value="1">已驱虫</option>
+              <option value="0">未驱虫</option>
+            </select>
+          </div>
+          <div class="right_box">
+            微信账号 :
+            <input type="text" name="cat_Contact_WeChat" value="" onblur="cheackwx()" id="Contact_WeChat"
+              class="text_style">
+          </div>
+        </div>
+        <div class="Unified_style">
+          <div class="left_box">
+            能否视频 :
+            <select name="cat_video" class="select_style">
+              <option value="">请选择</option>
+              <option value="1">可视频看猫咪</option>
+              <option value="0">不能视频看猫咪</option>
+            </select>
+          </div>
+          <div class="right_box">
+            待售数量 :
+            <input type="text" name="cat_Forsale_num" onblur="salenum()" value="" id="salenum1" class="text_style">
+          </div>
+        </div>
+        <div class="Unified_style">
+          <div class="left_box">
+            异地运费 :
+            <select name="cat_Remote_freight" class="select_style">
+              <option value="">请选择</option>
+              <option value="1">包运费！签协议！</option>
+              <option value="0">不包邮</option>
+            </select>
+          </div>
+          <div class="right_box">
+            猫咪价格 :
+            <input type="text" name="cat_price" onblur="pricenum()" id="pricenum1" class="text_style">
+          </div>
+        </div>
+        <div class="Unified_style">
+          <div class="left_box">
+            是否纯种 :
+            <select name="cat_ispurebred" class="select_style">
+              <option value="">请选择</option>
+              <option value="1">是纯种</option>
+              <option value="0">不是纯种</option>
+            </select>
+          </div>
+          <div class="right_box">
+            保障服务 :
+            <input type="text" name="cat_guarantee_service" id="service" onblur="cheackser()" value=""
+              placeholder="15个字以内" class="text_style">
+          </div>
+        </div>
+        <!-- 错误提示 pubshowerr-->
+        <div id="pubshowerr"> </div>
+        <!-- 提交按钮sub_box -->
+        <div onclick="cheackinput()" id="sub_box">提　交</div>
+      </div>
+    </form>
+  </div>
+  <footer id="footer"></footer>
+</body>
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/header.js"></script>
+<script src="js/cat_postMessage.js"></script>
+<script>
+  //验证帖子标题长度30字以内
+  function cheacktitle() {
+    var cheacklength = document.getElementById("cheacklen").value;
+    if (cheacklength.length > 30) {
+      document.getElementById("showerr").innerHTML = '***标题超出长度范围***';
+      return false;
+    } else {
+      document.getElementById("showerr").innerHTML = '***标题长度为30个汉字以内***';
+      return true;
+    }
+  }
+  //验证帖子描述
+  function cheackdesc() {
+    var cheadesclen = document.getElementById("cheadesc").value;
+    if (cheadesclen.length > 100) {
+      document.getElementById("pubshowerr").innerHTML = '帖子描述超出长度范围';
+      return false;
+    } else {
+      document.getElementById("pubshowerr").innerHTML = '';
+      return true;
+    }
+  }
+  //验证联系人10字符以内 
+  function cheackContacts() {
+    var Contactslength = document.getElementById("Contacts").value;
+    if (Contactslength.length > 10) {
+      document.getElementById("pubshowerr").innerHTML = '联系人超出长度范围';
+      return false;
+    } else {
+      document.getElementById("pubshowerr").innerHTML = '';
+      return true;
+    }
+  }
+  //验证保障服务15字符以内 
+  function cheackser() {
+    var servicelength = document.getElementById("service").value;
+    if (servicelength.length > 15) {
+      document.getElementById("pubshowerr").innerHTML = '保障服务超出长度范围';
+      return false;
+    } else {
+      document.getElementById("pubshowerr").innerHTML = '';
+      return true;
+    }
+  }
+  //联系电话验证 
+  function cheackphone() {
+    var phonenumlength = document.getElementById("phonenum").value;
+    var cheack2 = new RegExp(/^((\d{3,4})|\d{3,4}-)?\d{7,8}$/);
+    if (cheack2.test(phonenumlength)) {
+      document.getElementById("pubshowerr").innerHTML = '';
+      return true;
+    } else {
+      document.getElementById("pubshowerr").innerHTML = '电话号码格式不正确';
+      return false;
+    }
+  }
+  //验证QQ onblur="cheackQQ()" id="Contact_QQ"
+  function cheackQQ() {
+    var Contact_QQlength = document.getElementById("Contact_QQ").value;
+    var bValidate = RegExp(/^[1-9][0-9]{4,13}$/).test(Contact_QQlength);
+    if (bValidate) {
+      document.getElementById("pubshowerr").innerHTML = '';
+      return true;
+    } else {
+      document.getElementById("pubshowerr").innerHTML = '请输入正确QQ';
+      return false;
+    }
+  }
+  //验证微信 onblur="cheackwx" id="Contact_WeChat"
+  function cheackwx() {
+    var Contact_WeChatlength = document.getElementById("Contact_WeChat").value;
+    if (Contact_WeChatlength.length > 20) {
+      document.getElementById("pubshowerr").innerHTML = '请输入正确的微信号';
+      return false;
+    } else {
+      document.getElementById("pubshowerr").innerHTML = '';
+      return true;
+    }
+  }
+  //验证价格 只能输入数字
+  function pricenum() {
+    var pricenum1 = document.getElementById("pricenum1").value;
+    //匹配数字的正则表达式
+    //var cheacknum  = new RegExp(/^\+?[1-9][0-9]*$/);
+    var cheacknum = new RegExp(/^[1-9]\d{0,4}$/);
+    if (cheacknum.test(pricenum1)) {
+      document.getElementById("pubshowerr").innerHTML = '';
+      return true;
+    } else {
+      document.getElementById("pubshowerr").innerHTML = '请输入正确的价格';
+      return false;
+    }
+  }
+  //验证待售数量 只能输入数字
+  function salenum() {
+    var salenum1 = document.getElementById("salenum1").value;
+    //匹配数字的正则表达式
+    var cheacksalenum = new RegExp(/^[1-9]\d{0,2}$/);
+    if (cheacksalenum.test(salenum1)) {
+      document.getElementById("pubshowerr").innerHTML = '';
+      return true;
+    } else {
+      document.getElementById("pubshowerr").innerHTML = '请输入正确的待售数量';
+      return false;
+    }
+  }
+  // submit提交验证
+  function cheackinput() {
+    //验证标题
+    var cheacklength = document.getElementById("cheacklen").value;
+    if (cheacklength.length > 30) {
+      document.getElementById("showerr").innerHTML = '***标题超出长度范围***';
+      return false;
+    }
+    if (cheacklength.length <= 0) {
+      document.getElementById("showerr").innerHTML = '***标题为空***';
+      return false;
+    }
+    //验证帖子描述
+    var cheadesclen = document.getElementById("cheadesc").value;
+    if (cheadesclen.length > 100) {
+      document.getElementById("pubshowerr").innerHTML = '帖子描述超出长度范围';
+      return false;
+    }
+    if (cheadesclen.length <= 0) {
+      document.getElementById("pubshowerr").innerHTML = '帖子描述为空';
+      return false;
+    }
+    //验证猫咪品种
+    if ($('select[name="cat_Varieties"]').val() == '' || $('select[name="cat_Varieties"]').val() <= 0) {
+      document.getElementById("pubshowerr").innerHTML = '请选择猫咪品种';
+      return false;
+    }
+    //验证联系人10字符以内 
+    var Contactslength = document.getElementById("Contacts").value;
+    if (Contactslength.length > 10) {
+      document.getElementById("pubshowerr").innerHTML = '联系人超出长度范围';
+      return false;
+    }
+    if (Contactslength.length <= 0) {
+      document.getElementById("pubshowerr").innerHTML = '联系人为空';
+      return false;
+    }
+    //验证猫咪性别cat_sex
+    if ($('select[name="cat_sex"]').val() == '' || $('select[name="cat_sex"]').val() < 0) {
+      document.getElementById("pubshowerr").innerHTML = '请选择猫咪性别';
+      return false;
+    }
+    //验证子城市
+    if ($('select[name="cat_region_city"]').val() <= 0) {
+      document.getElementById("pubshowerr").innerHTML = '请选择城市';
+      return false;
+    }
+    //验证猫咪年龄
+    if ($('select[name="cat_age"]').val() == '' || $('select[name="cat_age"]').val() < 0) {
+      document.getElementById("pubshowerr").innerHTML = '请选择猫咪年龄';
+      return false;
+    }
+    //验证电话号码
+    var phonenumlength = document.getElementById("phonenum").value;
+    if (phonenumlength.length <= 0) {
+      document.getElementById("pubshowerr").innerHTML = '电话号为空';
+      return false;
+    }
+    var cheack2 = new RegExp(/^((\d{3,4})|\d{3,4}-)?\d{7,8}$/);
+    if (!cheack2.test(phonenumlength)) {
+      document.getElementById("pubshowerr").innerHTML = '电话号码格式不正确';
+      return false;
+    }
+    //验证猫咪疫苗cat_vaccine
+    if ($('select[name="cat_vaccine"]').val() == '' || $('select[name="cat_vaccine"]').val() < 0) {
+      document.getElementById("pubshowerr").innerHTML = '请选择疫苗情况';
+      return false;
+    }
+    //验证QQ
+    var Contact_QQlength = document.getElementById("Contact_QQ").value;
+    var bValidate = RegExp(/^[1-9][0-9]{4,13}$/).test(Contact_QQlength);
+    if (!bValidate) {
+      document.getElementById("pubshowerr").innerHTML = '请输入正确QQ';
+      return false;
+    }
+    if (Contact_QQlength.length <= 0) {
+      document.getElementById("pubshowerr").innerHTML = '请输入正确QQ';
+      return false;
+    }
+    //验证猫咪驱虫cat_Insect
+    if ($('select[name="cat_Insect"]').val() == '' || $('select[name="cat_Insect"]').val() < 0) {
+      document.getElementById("pubshowerr").innerHTML = '请选择驱虫情况';
+      return false;
+    }
+    //验证微信
+    var Contact_WeChatlength = document.getElementById("Contact_WeChat").value;
+    if (Contact_WeChatlength.length > 20) {
+      document.getElementById("pubshowerr").innerHTML = '请输入正确的微信号';
+      return false;
+    }
+    if (Contact_WeChatlength.length <= 0) {
+      document.getElementById("pubshowerr").innerHTML = '微信号为空';
+      return false;
+    }
+    //验证能否视频cat_video
+    if ($('select[name="cat_video"]').val() == '' || $('select[name="cat_video"]').val() < 0) {
+      document.getElementById("pubshowerr").innerHTML = '请选择能否视频';
+      return false;
+    }
+    //验证价格
+    var salenum1 = document.getElementById("salenum1").value;
+    var cheacksalenum = new RegExp(/^[1-9]\d{0,2}$/);
+    if (!cheacksalenum.test(salenum1)) {
+      document.getElementById("pubshowerr").innerHTML = '请输入正确的待售数量';
+      return false;
+    }
+    if (salenum1.length <= 0) {
+      document.getElementById("pubshowerr").innerHTML = '待售数量为空';
+      return false;
+    }
+    //验证异地运费cat_Remote_freight
+    if ($('select[name="cat_Remote_freight"]').val() == '' || $('select[name="cat_Remote_freight"]').val() < 0) {
+      document.getElementById("pubshowerr").innerHTML = '请选择运费情况';
+      return false;
+    }
+    //验证价格
+    var pricenum1 = document.getElementById("pricenum1").value;
+    var cheacknum = new RegExp(/^[1-9]\d{0,4}$/);
+    if (!cheacknum.test(pricenum1)) {
+      document.getElementById("pubshowerr").innerHTML = '请输入正确的价格';
+      return false;
+    }
+    if (pricenum1.length <= 0) {
+      document.getElementById("pubshowerr").innerHTML = '价格为空';
+      return false;
+    }
+    if (pricenum1 < 2000) {
+      document.getElementById("pubshowerr").innerHTML = '价格不符合条件';
+      return false;
+    }
+    //验证猫咪是否纯种cat_ispurebred
+    if ($('select[name="cat_ispurebred"]').val() == '' || $('select[name="cat_ispurebred"]').val() < 0) {
+      document.getElementById("pubshowerr").innerHTML = '请选择是否纯种';
+      return false;
+    }
+    //验证保障服务
+    var servicelength = document.getElementById("service").value;
+    if (servicelength.length > 15) {
+      document.getElementById("pubshowerr").innerHTML = '保障服务超出长度范围';
+      return false;
+    }
+    if (servicelength.length <= 0) {
+      document.getElementById("pubshowerr").innerHTML = '保障服务为空';
+      return false;
+    }
+  }
+</script>
+
+</html>

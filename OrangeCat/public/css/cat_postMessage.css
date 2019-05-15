@@ -1,0 +1,226 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: #efefef;
+	font-family: "Microsoft YaHei";
+}
+#ban_repeat{
+	width: 1200px;
+	height: 100px;
+	background: #fff;
+	/*border: 1px solid red;*/
+	margin: 150px auto 10px;
+	line-height: 100px;
+	text-align: center;
+	border-radius: 10px; 
+	color: #333;
+	font-size: 25px;
+}
+
+#release_Explain{
+	width: 1140px;
+	padding-left: 60px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	/*border: 1px solid red;*/
+	margin: 18px auto;
+	background: #fff;
+	border-radius: 10px;
+}
+
+#release_Explain p{
+	width: 100%;
+	height: 30px;
+	/*border: 1px solid red;*/
+	line-height: 30px;
+	text-align: left;
+	color: #333;
+	font-size: 14px;
+}
+
+#release_info{
+	width: 1200px;
+	height: 700px;
+	/*border: 1px solid red;*/
+	margin: 10px auto;
+}
+
+#release_info #post_title{
+	width: 1200px;
+	height: 106px;
+	/*border: 1px solid red;*/
+	background: #fff;
+	border-radius: 10px;
+	line-height: 106px;
+}
+
+#release_info #post_title .left{
+	font-size: 20px;
+	color: #333;
+	float: left;
+	margin-left: 65px;
+}
+
+#release_info #post_title #cheacklen{
+	width: 639px;
+	height: 63px;
+	float: left;
+	margin-left: 20px;
+	border: none;
+	outline: none;
+	background: #EFF3F5;
+	border-radius: 10px;
+	margin-top: 21px;
+	text-indent: 20px;
+	color: #333;
+	font-size: 18px;
+}
+
+#release_info #post_title span{
+	float: left;
+	margin-left: 26px;
+	color: #ff0000;
+	font-size: 16px;
+}
+
+#release_info #other_info{
+	width: 1200px;
+	height: 700px;
+	background: #fff;
+	margin-top: 22px;
+	border-radius: 10px;
+}
+
+#release_info #other_info #postdesc{
+	width: 988px;
+	height: 60px;
+	/*border: 1px solid red;*/
+	margin: 0 auto;
+	line-height: 60px;
+	color: #333;
+	font-size: 16px;
+}
+
+#release_info #other_info #postdesc #cheadesc{
+	width: 889px;
+	height: 33px;
+	margin-left: 18px;
+	border: none;
+	outline: none;
+	background: #EFF3F5;
+	border-radius: 5px;
+	text-indent: 20px;
+	font-size: 16px;
+	color: #333;
+}
+
+#release_info #other_info .Unified_style{
+	width: 988px;
+	height: 50px;
+	/*border: 1px solid red;*/
+	margin: 0 auto;
+}
+
+#release_info #other_info .Unified_style .left_box{
+	width: 389px;
+	height: 50px;
+	/*border: 1px solid red;*/
+	float: left;
+	line-height: 50px;
+	color: #333;
+	font-size: 16px;
+}
+
+#release_info #other_info .Unified_style .left_box .select_style{
+	width: 293px;
+	height: 33px;
+	margin-left: 15px;
+	border: none;
+	outline: none;
+	background: #EFF3F5;
+	border-radius: 5px;
+	text-indent: 20px;
+	color: #333;
+	font-size: 16px;
+}
+
+#release_info #other_info .Unified_style .right_box{
+	width: 389px;
+	height: 50px;
+	/*border: 1px solid red;*/
+	float: right;
+	line-height: 50px;
+	color: #333;
+	font-size: 16px;
+}
+
+#release_info #other_info .Unified_style .right_box .text_style{
+	width: 293px;
+	height: 33px;
+	margin-left: 15px;
+	border: none;
+	outline: none;
+	background: #EFF3F5;
+	border-radius: 5px;
+	text-indent: 20px;
+	color: #333;
+	font-size: 16px;
+}
+
+#pubshowerr{
+	width: 890px;
+	height: 25px;
+	/*border: 1px solid red;*/
+	margin: 10px auto;
+	line-height: 25px;
+	font-size: 16px;
+	color: #ff0000;
+}
+
+#price_img_Explain{
+	width: 920px;
+	padding-left: 35px;
+	/*border: 1px solid red;*/
+	margin: 30px auto;
+}
+
+#price_img_Explain p{
+	width: 100%;
+	height: 30px;
+	/*border: 1px solid red;*/
+	line-height: 30px;
+	text-align: left;
+	font-size: 14px;
+	color: #333;
+}
+
+#post_content_box{
+	width: 988px;
+	height: 372px;
+	/*border: 1px solid red;*/
+	margin: 0 auto;
+	background: #EFF3F5;
+	border-radius: 10px;
+}
+
+#post_content_box #editor{
+	width: 100%;
+	height: 100%;
+	outline: none;
+}
+#sub_box{
+	width: 166px;
+	height: 48px;
+	/*border: 1px solid red;*/
+	margin: 45px auto;
+	background-image: url(../images/join_submit.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	text-align: center;
+	line-height: 40px;
+	color: #fff;
+	font-size: 22px;
+  cursor: pointer;
+}
